@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
     {
         if(Requirements.Count == 0 && !isOpened) 
         { 
-            doorPivot.transform.rotation= Quaternion.Euler(new Vector3(0, -180, 0));
+            doorPivot.transform.rotation= Quaternion.Euler(new Vector3(0, 90, 0));
             isOpened = true;
         Debug.Log("Ýçerdeyim dayý");
         }
