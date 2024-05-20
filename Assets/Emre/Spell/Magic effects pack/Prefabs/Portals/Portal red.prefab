@@ -4853,6 +4853,7 @@ GameObject:
   - component: {fileID: 8715761903829094485}
   - component: {fileID: 2564269725737345609}
   - component: {fileID: 6731722446743464707}
+  - component: {fileID: -6059097373747689565}
   m_Layer: 0
   m_Name: Portal red
   m_TagString: Untagged
@@ -9756,6 +9757,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3528409, y: 1.8644829, z: 0}
   m_Center: {x: 0.023327112, y: -0.20824313, z: -0.05240056}
+--- !u!114 &-6059097373747689565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617036660772024948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e962eae74bec14c80778a75714f750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalPoint: {fileID: 7730163096866652700, guid: a3790781732d1b64ea167618d183caaa, type: 3}
+  portalPoint2: {fileID: 8916119629638303859, guid: a34b8c3273753f246acc8cb14747446d, type: 3}
 --- !u!1 &6842134302800741127
 GameObject:
   m_ObjectHideFlags: 0
