@@ -13,6 +13,7 @@ public class PressuregameObject : MonoBehaviour
     private Quaternion originalPositionOfDoor;
     [SerializeField] private float downValue=0.1f;
     [SerializeField] GameObject door;
+    private bool control = false;
     
 
     void Start()
@@ -23,19 +24,11 @@ public class PressuregameObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !control)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - downValue, gameObject.transform.position.z);
             door.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            control = true;
         }
-    }
-
-    void OnTriggerExit(Collider other)
-    {        
-        if (other.CompareTag("Player"))
-        {
-            gameObject.transform.position = originalPosition;
-            door.transform.rotation = originalPositionOfDoor;
-        }
-    }
+    }   
 }
