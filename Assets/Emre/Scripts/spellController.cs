@@ -6,20 +6,18 @@ public class spellController : MonoBehaviour
 {
     public GameObject spellPrefab;
     public GameObject spellPrefab2;
-    public GameObject spellPrefab3;
     public GameObject portalPrefab;
     public Transform spellSpawnPoint;
     public Transform portalSpawnPoint;
 
     public float spellCooldown = 8f;
-    public float spellCooldown2 = 10f;
-    public float spellCooldown3 = 15f;
+    public float spellCooldown2 = 15f;
     public float portalCooldown = 20f;
 
     private bool canCastSpell = true;
     private bool canCastSpell2 = true;
-    private bool canCastSpell3 = true;
     private bool canCastPortal = true;
+
 
     private void Update()
     {
@@ -27,6 +25,7 @@ public class spellController : MonoBehaviour
         {
             CastSpell();
             canCastSpell = false;
+            
             Invoke("ResetSpellCooldown", spellCooldown);
         }
         if (Input.GetKeyDown(KeyCode.Q) && canCastSpell2)
@@ -35,14 +34,8 @@ public class spellController : MonoBehaviour
             canCastSpell2 = false;
             Invoke("ResetSpellCooldown2", spellCooldown2);
         }
-        if (Input.GetKeyDown(KeyCode.R) && canCastSpell3)
-        {
-            CastSpell3();
-            canCastSpell3 = false;
-            Invoke("ResetSpellCooldown3", spellCooldown3);
-        }
 
-        if (Input.GetKeyDown(KeyCode.P) && canCastPortal)
+        if (Input.GetKeyDown(KeyCode.R) && canCastPortal)
         {
             GameObject portalInstance = CastPortal();
             canCastPortal = false;
@@ -77,13 +70,6 @@ public class spellController : MonoBehaviour
         }
     }
 
-    void CastSpell3()
-    {
-        if (spellPrefab3 != null && spellSpawnPoint != null)
-        {
-            Instantiate(spellPrefab3, spellSpawnPoint.position, spellSpawnPoint.rotation);
-        }
-    }
 
     void ResetSpellCooldown()
     {
@@ -92,10 +78,6 @@ public class spellController : MonoBehaviour
     void ResetSpellCooldown2()
     {
         canCastSpell2 = true;
-    }
-    void ResetSpellCooldown3()
-    {
-        canCastSpell3 = true;
     }
     void ResetPortalCooldown()
     {
