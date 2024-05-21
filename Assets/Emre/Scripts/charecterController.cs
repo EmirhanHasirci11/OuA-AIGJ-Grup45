@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 4f;
     public float runSpeed = 2f;
     public float jumpSpeed = 5f;
     public float rotationSpeed = 100.0f;
@@ -43,7 +43,7 @@ public class CharacterController : MonoBehaviour
         if (verticalInput != 0 || horizontalInput != 0)
         {
             animator.SetFloat("speed", 0.5f);
-            speed = 1f;
+            speed = 4f;
         }
         else
             animator.SetFloat("speed", 0);
